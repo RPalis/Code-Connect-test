@@ -265,6 +265,16 @@ h1 {
 .sds-form-login { display: flex; min-width: 320px; flex-direction: column; gap: 24px; border: 1px solid #d9d9d9; border-radius: 8px; padding: 24px; background: #fff; }
 .sds-form-login__actions { display: flex; width: 100%; }
 .sds-form-login__actions .sds-button { width: 100%; }
+.sds-card { display: flex; align-items: flex-start; gap: 24px; width: 440px; min-width: 240px; }
+.sds-card--stroke { border: 1px solid #d9d9d9; border-radius: 8px; padding: 24px; background: #fff; }
+.sds-card--vertical { flex-direction: column; }
+.sds-card__icon { width: 32px; height: 32px; flex: 0 0 32px; }
+.sds-card__icon img, .sds-card__image { width: 100%; height: 100%; object-fit: contain; }
+.sds-card__image { width: 160px; height: 160px; flex: 0 0 160px; background: #e3e3e3; }
+.sds-card__body { display: flex; min-width: 160px; flex: 1; flex-direction: column; gap: 16px; }
+.sds-card__body h2 { margin: 0 0 8px; color: #1e1e1e; font-size: 24px; line-height: 1.2; }
+.sds-card__body p { margin: 0; color: #757575; line-height: 1.4; }
+.sds-card__body button { align-self: flex-start; border: 1px solid #767676; border-radius: 8px; padding: 12px; background: #e3e3e3; }
 
 .sds-input-field {
   display: flex;
