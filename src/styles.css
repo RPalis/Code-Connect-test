@@ -4,6 +4,19 @@
   --sds-color-icon-brand-default: #2c2c2c;
   --sds-color-text-brand-default: #2c2c2c;
   --sds-color-border-neutral-default: #303030;
+  --sds-color-text-default-default: #1e1e1e;
+  --sds-color-text-default-tertiary: #b3b3b3;
+  --sds-color-text-disabled-default: #b3b3b3;
+  --sds-color-text-disabled-on-disabled: #b3b3b3;
+  --sds-color-text-danger-default: #900b09;
+  --sds-color-border-default-default: #d9d9d9;
+  --sds-color-border-danger-default: #900b09;
+  --sds-color-border-disabled-default: #b3b3b3;
+  --sds-color-background-default-default: #ffffff;
+  --sds-color-background-disabled-default: #d9d9d9;
+  --sds-size-space-300: 12px;
+  --sds-size-space-400: 16px;
+  --sds-size-radius-200: 8px;
   --sds-typography-body-font-family: Inter, ui-sans-serif, system-ui, sans-serif;
   --sds-typography-body-font-weight-strong: 600;
   --sds-typography-body-size-small: 14px;
@@ -51,6 +64,124 @@ h1 {
   margin: 0 0 20px;
   font-size: clamp(32px, 6vw, 56px);
   line-height: 1;
+}
+
+.sds-text {
+  display: flex;
+  align-items: flex-start;
+}
+
+.sds-text p {
+  margin: 0;
+  color: var(--sds-color-text-default-default);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.sds-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sds-size-space-200);
+  overflow: clip;
+  border: var(--sds-responsive-border-width) solid transparent;
+  border-radius: var(--sds-size-radius-200);
+  font: 400 16px/1 var(--sds-typography-body-font-family);
+  cursor: pointer;
+}
+
+.sds-button--medium { padding: var(--sds-size-space-300); }
+.sds-button--small { padding: var(--sds-size-space-200); }
+
+.sds-button--primary { color: #f5f5f5; background: #2c2c2c; border-color: #2c2c2c; }
+.sds-button--primary.sds-button--hover { background: #1e1e1e; }
+.sds-button--neutral { color: #1e1e1e; background: #e3e3e3; border-color: #767676; }
+.sds-button--neutral.sds-button--hover { background: #cdcdcd; }
+.sds-button--subtle { color: #303030; background: transparent; }
+.sds-button--subtle.sds-button--hover { border-color: #d9d9d9; }
+.sds-button--disabled { color: #b3b3b3; background: #d9d9d9; border-color: #b3b3b3; cursor: not-allowed; }
+
+.sds-button__fallback-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid currentColor;
+}
+
+.sds-button__fallback-icon--start { border-radius: 50%; }
+.sds-button__fallback-icon--end { border-radius: 3px; }
+
+.sds-input-field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sds-size-space-200);
+  width: 100%;
+  color: var(--sds-color-text-default-default);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.sds-input-field__label,
+.sds-input-field__description,
+.sds-input-field__error {
+  display: block;
+}
+
+.sds-input-field__description {
+  color: var(--sds-color-text-default-secondary);
+}
+
+.sds-input-field__label--disabled {
+  color: var(--sds-color-text-disabled-default);
+}
+
+.sds-input-field__control {
+  display: flex;
+  align-items: center;
+  min-width: 120px;
+  width: 100%;
+  overflow: clip;
+  border: var(--sds-responsive-border-width) solid var(--sds-color-border-default-default);
+  border-radius: var(--sds-size-radius-200);
+  padding: var(--sds-size-space-300) var(--sds-size-space-400);
+  background: var(--sds-color-background-default-default);
+}
+
+.sds-input-field__control--error {
+  border-color: var(--sds-color-border-danger-default);
+}
+
+.sds-input-field__control--disabled {
+  border-color: var(--sds-color-border-disabled-default);
+  background: var(--sds-color-background-disabled-default);
+}
+
+.sds-input-field__control input {
+  min-width: 0;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  outline: 0;
+  color: var(--sds-color-text-default-default);
+  background: transparent;
+  font: inherit;
+  line-height: 1;
+}
+
+.sds-input-field__control--placeholder input {
+  color: var(--sds-color-text-default-tertiary);
+}
+
+.sds-input-field__control--disabled input {
+  color: var(--sds-color-text-disabled-on-disabled);
+}
+
+.sds-input-field__error {
+  color: var(--sds-color-text-danger-default);
 }
 
 .navigation-button-list {
