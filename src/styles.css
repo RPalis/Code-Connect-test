@@ -553,3 +553,12 @@ h1 {
 .sds-text-price { display: flex; flex-direction: column; gap: 4px; }
 .sds-text-price strong { font-size: 32px; }
 .sds-text-price--small strong { font-size: 20px; }
+
+.sds-section { display: flex; flex-direction: column; gap: 24px; width: 100%; }
+.sds-platform--desktop { max-width: 1200px; }
+.sds-platform--mobile { max-width: 400px; }
+header, footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+header nav, footer nav { display: flex; gap: 16px; align-items: center; }
+.sds-hero__image, .sds-panel__image { height: 240px; border-radius: 8px; background: #e3e3e3; }
+section { display: flex; flex-direction: column; gap: 24px; }
+section .sds-card, section .sds-product-card { flex: 1; }
