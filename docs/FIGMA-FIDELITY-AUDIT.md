@@ -4,7 +4,7 @@ Target file: `CSe45kCpGg8PHrJarkfgKt`
 
 ## Scope
 
-The published library contains 1,850 components: 128 functional components and 1,722 icons. Implementation proceeds in dependency order, with each Figma component represented by an atomic code component and a `.figma.ts` template.
+The published inventory contains 1,850 records: 1,722 icons, 125 visible non-utility components, and 3 Utilities records. Utilities are intentionally excluded. Implementation proceeds in dependency order, with each visible Figma component represented by an atomic JSX/TypeScript component and a `.figma.ts` template.
 
 ## Atomic contract
 
@@ -34,7 +34,7 @@ Each component must pass all checks before publishing:
 
 ## Current audit result
 
-`Navigation Button List` preserves its Row and Column variants, five independent link booleans, slot override, 24px icon size, 68px row height, 115px column width, 8px/6px spacing, Inter 14px semi-bold typography, and named SDS tokens. Publishing remains gated by a valid Figma access token.
+Current JSX/TypeScript coverage is 12 visible components: Navigation Button List, Button, Input Field, Text, Navigation Pill, Pagination, Tab, Avatar, Accordion Item, Text Content Heading, Text Content Title, and Text Link List. Each completed component has a matching Code Connect template. Publishing remains gated by a valid Figma access token.
 
 ## Batch order
 
