@@ -35,8 +35,11 @@ async function main() {
     return;
   }
 
-  const { meta = [] } = await figmaFetch(`/files/${fileKey}/components`);
-  const components = meta.filter((component) => component.node_id && component.name);
+  const payload = await figmaFetch(`/files/${fileKey}/components`);
+  const componentList = Array.isArray(payload.meta)
+    ? payload.meta
+    : payload.meta?.components ?? payload.components ?? [];
+  const components = componentList.filter((component) => component.node_id && component.name);
   await mkdir(outputDir, { recursive: true });
   const registry = {};
 
