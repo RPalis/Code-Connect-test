@@ -275,6 +275,22 @@ h1 {
 .sds-card__body h2 { margin: 0 0 8px; color: #1e1e1e; font-size: 24px; line-height: 1.2; }
 .sds-card__body p { margin: 0; color: #757575; line-height: 1.4; }
 .sds-card__body button { align-self: flex-start; border: 1px solid #767676; border-radius: 8px; padding: 12px; background: #e3e3e3; }
+.sds-icon-button { display: grid; place-items: center; border: 1px solid #2c2c2c; border-radius: 32px; color: #f5f5f5; background: #2c2c2c; cursor: pointer; }
+.sds-icon-button--medium { width: 40px; height: 40px; }
+.sds-icon-button--small { width: 32px; height: 32px; }
+.sds-icon-button--neutral { color: #1e1e1e; border-color: #d9d9d9; background: #f5f5f5; }
+.sds-icon-button--subtle { color: #303030; border-color: transparent; background: transparent; }
+.sds-icon-button--disabled { color: #b3b3b3; border-color: #b3b3b3; background: #d9d9d9; cursor: not-allowed; }
+.sds-button-group { display: flex; gap: 16px; width: 240px; align-items: center; }
+.sds-button-group--justify button { flex: 1; }
+.sds-button-group--stack { flex-direction: column; align-items: stretch; justify-content: center; }
+.sds-button-group button { border: 0; border-radius: 8px; padding: 12px; color: #303030; background: transparent; font: inherit; }
+.sds-button-group .sds-button-group__end { color: #f5f5f5; background: #2c2c2c; }
+.sds-checkbox-field { display: grid; grid-template-columns: 16px 1fr; gap: 12px; min-width: 120px; align-items: center; color: #1e1e1e; font-size: 16px; line-height: 1.4; }
+.sds-checkbox { display: grid; place-items: center; width: 16px; height: 16px; border: 1px solid #757575; border-radius: 4px; color: #fff; background: #fff; font-size: 12px; }
+.sds-checkbox--checked, .sds-checkbox--indeterminate { border-color: #2c2c2c; background: #2c2c2c; }
+.sds-checkbox-field--disabled { opacity: .5; }
+.sds-checkbox-field small { grid-column: 2; color: #757575; font-size: 16px; }
 
 .sds-input-field {
   display: flex;
