@@ -23,3 +23,19 @@ export function TextEmphasis({ className, text = 'Text Emphasis' }: TextVariantP
 export function TextSubheading({ className, text = 'Text Subheading' }: TextVariantProps) {
   return <span className={`sds-text-variant sds-text-subheading ${className ?? ''}`}>{text}</span>;
 }
+
+export function TextHeading({ className, text = 'Text Heading' }: TextVariantProps) {
+  return <span className={`sds-text-variant sds-text-heading ${className ?? ''}`}>{text}</span>;
+}
+
+export function TextSubtitle({ className, text = 'Text Subtitle' }: TextVariantProps) {
+  return <span className={`sds-text-variant sds-text-subtitle ${className ?? ''}`}>{text}</span>;
+}
+
+export function TextTitlePage({ className, text = 'Text Title Page' }: TextVariantProps) {
+  return <span className={`sds-text-variant sds-text-title-page ${className ?? ''}`}>{text}</span>;
+}
+
+export function TextTitleHero({ className, text = 'Text Title Hero' }: TextVariantProps) {
+  return <span className={`sds-text-variant sds-text-title-hero ${className ?? ''}`}>{text}</span>;
+}
