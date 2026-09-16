@@ -24,3 +24,4 @@ export * from './CardsExtended';
 export * from './Remaining';
 export * from './Sections';
 export * from './Examples';
+export * from './Inputs2';
