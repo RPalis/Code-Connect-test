@@ -1,43 +1,72 @@
 import { useState } from 'react';
+import starActive from './assets/star-active.svg';
+import starDefault from './assets/star-default.svg';
 
-export type NavigationButtonListDirection = 'row' | 'column';
+export type NavigationButtonDirection = 'Row' | 'Column';
 
-export type NavigationButtonListProps = {
-  direction?: NavigationButtonListDirection;
-  links?: boolean[];
+export type NavigationButtonProps = {
+  direction: NavigationButtonDirection;
+  active?: boolean;
+  label?: string;
+  onClick?: () => void;
 };
 
-const labels = ['Overview', 'Activity', 'Files', 'Members', 'Settings'];
+export type NavigationButtonListProps = {
+  className?: string;
+  children?: React.ReactNode;
+  direction?: NavigationButtonDirection;
+  link1?: boolean;
+  link2?: boolean;
+  link3?: boolean;
+  link4?: boolean;
+  link5?: boolean;
+};
 
-function StarIcon() {
+const labels = ['Label', 'Label', 'Label', 'Label', 'Label'];
+
+export function NavigationButton({ direction, active = false, label = 'Label', onClick }: NavigationButtonProps) {
   return (
-    <svg aria-hidden="true" className="navigation-button__icon" viewBox="0 0 24 24">
-      <path d="m12 3 2.78 5.63 6.22.9-4.5 4.39 1.06 6.2L12 17.2l-5.56 2.92 1.06-6.2L3 9.53l6.22-.9L12 3Z" />
-    </svg>
+    <button
+      aria-current={active ? 'page' : undefined}
+      className={`navigation-button navigation-button--${direction.toLowerCase()}${active ? ' navigation-button--active' : ''}`}
+      onClick={onClick}
+      type="button"
+    >
+      <img alt="" className="navigation-button__icon" src={active ? starActive : starDefault} />
+      <span>{label}</span>
+    </button>
   );
 }
 
 export function NavigationButtonList({
-  direction = 'row',
-  links = [true, true, true, true, true],
+  className,
+  children = null,
+  direction = 'Row',
+  link1 = true,
+  link2 = true,
+  link3 = true,
+  link4 = true,
+  link5 = true,
 }: NavigationButtonListProps) {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
+  const links = [link1, link2, link3, link4, link5];
 
   return (
-    <nav aria-label="Primary navigation" className={`navigation-button-list navigation-button-list--${direction}`}>
-      {labels.map((label, index) =>
-        links[index] ? (
-          <button
-            aria-current={activeIndex === index ? 'page' : undefined}
-            className={`navigation-button${activeIndex === index ? ' navigation-button--active' : ''}`}
-            key={label}
-            onClick={() => setActiveIndex(index)}
-            type="button"
-          >
-            <StarIcon />
-            <span>{label}</span>
-          </button>
-        ) : null,
+    <nav aria-label="Primary navigation" className={`${className ?? ''} navigation-button-list navigation-button-list--${direction.toLowerCase()}`}>
+      {children ?? (
+        <div className={`navigation-button-list__slot navigation-button-list__slot--${direction.toLowerCase()}`}>
+          {links.map((visible, index) =>
+            visible ? (
+              <NavigationButton
+                active={activeIndex === index}
+                direction={direction}
+                key={`link-${index + 1}`}
+                label={labels[index]}
+                onClick={() => setActiveIndex(index)}
+              />
+            ) : null,
+          )}
+        </div>
       )}
     </nav>
   );
