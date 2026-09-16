@@ -1,0 +1,5 @@
+// url=https://www.figma.com/design/CSe45kCpGg8PHrJarkfgKt/Simple-Design-System--Community-?node-id=515-5459
+/// <reference path="./node_modules/@figma/code-connect/figma-types.d.ts" />
+import figma from 'figma';
+const instance = figma.selectedInstance;
+export default { example: figma.code`<NavigationButton direction="${instance.getEnum('Direction', { Column: 'Column', Row: 'Row' })}" hasIcon={${instance.getBoolean('Has Icon')}} hasLabel={${instance.getBoolean('Has Label')}} label="${instance.getString('Label')}" state="${instance.getEnum('State', { Default: 'Default', Hover: 'Hover', Active: 'Active' })}" type="${instance.getEnum('Type', { Small: 'Small', Medium: 'Medium' })}" />`, imports: ['import { NavigationButton } from "./src/components/NavigationAdvanced"'], id: 'navigation-button' };
