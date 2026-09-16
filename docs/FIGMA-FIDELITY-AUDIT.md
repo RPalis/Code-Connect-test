@@ -36,6 +36,10 @@ Each component must pass all checks before publishing:
 
 Current JSX/TypeScript coverage is 12 visible components: Navigation Button List, Button, Input Field, Text, Navigation Pill, Pagination, Tab, Avatar, Accordion Item, Text Content Heading, Text Content Title, and Text Link List. Each completed component has a matching Code Connect template. Publishing remains gated by a valid Figma access token.
 
+## Final coverage
+
+All 125 visible non-utility Figma components now have a JSX/TypeScript implementation and a Code Connect template. 2,046 synced Figma SVG assets are committed under `src/assets/figma`. The production build passes and all templates parse. Final publishing to Figma requires a valid access token (Code Connect validation currently stops at authentication).
+
 ## Batch order
 
 1. Primitives: icons, text, buttons, inputs.
