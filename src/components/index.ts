@@ -15,5 +15,6 @@ export * from './Card';
 export * from './ActionControls';
 export * from './FormLogIn';
 export * from './InputControls';
+export * from './MenuAndDialog';
 export { NavigationButton, NavigationPillList, Tabs } from './NavigationAdvanced';
 export * from './TagToggle';

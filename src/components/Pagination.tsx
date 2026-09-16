@@ -1,9 +1,9 @@
 import type { ReactNode } from 'react';
 
-export type PaginationPageProps = { number?: string; state?: 'Default' | 'Current' };
+export type PaginationPageProps = { number?: string; state?: 'Default' | 'Hover' | 'Current' | 'Current Hover' };
 
 export function PaginationPage({ number = '1', state = 'Default' }: PaginationPageProps) {
-  return <button className={`sds-pagination__page sds-pagination__page--${state.toLowerCase()}`} type="button">{number}</button>;
+  return <button className={`sds-pagination__page sds-pagination__page--${state.toLowerCase().replace(' ', '-')}`} type="button">{number}</button>;
 }
 
 export function PaginationGap() {
