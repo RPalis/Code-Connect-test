@@ -337,6 +337,15 @@ h1 {
 .sds-avatar-group--overlap { gap: 0; }
 .sds-avatar-group--overlap .sds-avatar { margin-right: -8px; }
 .sds-avatar-group > span { display: grid; place-items: center; width: 24px; min-width: 24px; height: 32px; border-radius: 8px; color: #757575; background: #f5f5f5; font-size: 14px; }
+.sds-ai-sidebar { display: flex; width: 320px; min-height: 400px; flex-direction: column; gap: 16px; border-right: 1px solid #d9d9d9; padding: 24px; background: #fff; }
+.sds-ai-sidebar button { border: 1px solid #d9d9d9; border-radius: 8px; padding: 8px; background: #fff; font: inherit; }
+.sds-ai-conversation { display: flex; width: 804px; flex-direction: column; gap: 24px; }
+.sds-ai-user-message { width: 480px; border: 1px solid #d9d9d9; border-radius: 8px; padding: 6px 8px; background: #f5f5f5; }
+.sds-ai-user-message p { margin: 0; }
+.sds-ai-response { display: flex; width: 560px; gap: 8px; align-items: flex-start; }
+.sds-ai-response > span { display: grid; place-items: center; width: 20px; height: 20px; border-radius: 4px; color: #fff; background: #2c2c2c; }
+.sds-ai-response p { margin: 0; line-height: 1.4; }
+.sds-ai-code-block { width: 800px; overflow: auto; border-radius: 8px; padding: 16px; color: #abb2bf; background: #282c34; font-family: 'Roboto Mono', ui-monospace, monospace; }
 .sds-pagination__page--hover { background: #f5f5f5; }
 .sds-pagination__page--current-hover { color: #fff; background: #1e1e1e; }
 

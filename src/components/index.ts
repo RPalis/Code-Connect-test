@@ -11,6 +11,7 @@ export * from './TextLinkList';
 export * from './Tooltip';
 export * from './CalendarControls';
 export * from './AIChatBox';
+export * from './AIChatPrimitives';
 export * from './Card';
 export * from './ActionControls';
 export * from './FormLogIn';
