@@ -246,6 +246,18 @@ h1 {
 .sds-tag-toggle { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; border-radius: 8px; padding: 8px; color: #f5f5f5; background: #2c2c2c; font: inherit; cursor: pointer; }
 .sds-tag-toggle--off { color: #757575; background: #f5f5f5; }
 
+.sds-ai-chat-box { display: flex; width: 400px; min-width: 240px; min-height: 80px; flex-direction: column; gap: 24px; border: 1px solid #d9d9d9; border-radius: 16px; padding: 16px; background: #fff; }
+.sds-ai-chat-box p { height: 22px; margin: 0; color: #b3b3b3; }
+.sds-ai-chat-box--active p { color: #1e1e1e; }
+.sds-ai-chat-box__actions { display: flex; align-items: flex-start; justify-content: space-between; width: 100%; }
+.sds-ai-chat-box__actions > div { display: flex; gap: 8px; }
+.sds-ai-chat-box button { border: 0; border-radius: 32px; padding: 8px; background: transparent; cursor: pointer; }
+.sds-ai-chat-box__send { border: 1px solid #b3b3b3 !important; background: #d9d9d9 !important; }
+.sds-ai-chat-box--active .sds-ai-chat-box__send { border-color: #2c2c2c !important; color: #fff; background: #2c2c2c !important; }
+.sds-form-login { display: flex; min-width: 320px; flex-direction: column; gap: 24px; border: 1px solid #d9d9d9; border-radius: 8px; padding: 24px; background: #fff; }
+.sds-form-login__actions { display: flex; width: 100%; }
+.sds-form-login__actions .sds-button { width: 100%; }
+
 .sds-input-field {
   display: flex;
   flex-direction: column;
