@@ -14,4 +14,5 @@ export * from './AIChatBox';
 export * from './Card';
 export * from './ActionControls';
 export * from './FormLogIn';
+export * from './InputControls';
 export * from './TagToggle';
