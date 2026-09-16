@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --open /navigation-button-list.html",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "sync:figma-assets": "node scripts/sync-figma-assets.mjs"
   },
   "dependencies": {
     "react": "^19.1.1",
