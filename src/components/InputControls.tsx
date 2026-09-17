@@ -1,11 +1,26 @@
-export type RadioFieldProps = { className?: string; description?: string; hasDescription?: boolean; label?: string; state?: 'Default' | 'Disabled'; valueType?: boolean };
+import type { ReactNode } from 'react';
 
-export function RadioField({ className, description = 'Description', hasDescription = true, label = 'Label', state = 'Default', valueType = true }: RadioFieldProps) {
-  return <label className={`sds-radio-field sds-radio-field--${state.toLowerCase()} ${className ?? ''}`}><span className={`sds-radio ${valueType ? 'sds-radio--checked' : ''}`} /> <span>{label}</span>{hasDescription && <small>{description}</small>}</label>;
+export type RadioFieldProps = { className?: string; description?: string; hasDescription?: boolean; label?: string; state?: 'Default' | 'Disabled'; valueType?: 'Unchecked' | 'Checked' };
+
+export function RadioField({ className, description = 'Description', hasDescription = true, label = 'Label', state = 'Default', valueType = 'Checked' }: RadioFieldProps) {
+  const checked = valueType === 'Checked';
+  return (
+    <label className={`sds-radio-field sds-radio-field--${state.toLowerCase()} ${checked ? 'sds-radio-field--checked' : ''} ${className ?? ''}`}>
+      <span aria-hidden="true" className={`sds-radio ${checked ? 'sds-radio--checked' : ''}`} />
+      <span>{label}</span>
+      {hasDescription && <small>{description}</small>}
+    </label>
+  );
 }
 
-export function RadioGroup() {
-  return <div className="sds-radio-group"><RadioField /><RadioField label="Label" valueType={false} /><RadioField label="Label" valueType={false} /></div>;
+export type RadioGroupProps = { className?: string; children?: ReactNode };
+
+export function RadioGroup({ className, children }: RadioGroupProps) {
+  return (
+    <div className={`sds-radio-group ${className ?? ''}`} role="radiogroup">
+      {children ?? <><RadioField /><RadioField label="Label" valueType="Unchecked" /><RadioField label="Label" valueType="Unchecked" /></>}
+    </div>
+  );
 }
 
 export function CheckboxGroup() {

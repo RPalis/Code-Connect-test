@@ -2,4 +2,4 @@
 /// <reference path="./node_modules/@figma/code-connect/figma-types.d.ts" />
 import figma from 'figma';
 const state = figma.selectedInstance.getEnum('State', { Default: 'Default', Hover: 'Hover', Disabled: 'Disabled' });
-export default { example: figma.code`<PaginationNext state="${state}" />`, imports: ['import { PaginationNext } from "./src/components/NavigationAdvanced"'], id: 'pagination-next' };
+export default { example: figma.code`<PaginationNext state="${state}" />`, imports: ['import { PaginationNext } from "./src/components/Pagination"'], id: 'pagination-next' };

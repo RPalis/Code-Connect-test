@@ -10,12 +10,16 @@ export function PaginationGap() {
   return <span className="sds-pagination__gap" aria-hidden="true">...</span>;
 }
 
-export function PaginationPrevious() {
-  return <button className="sds-pagination__previous" disabled type="button">← <span>Previous</span></button>;
+export type PaginationDirectionProps = { className?: string; state?: 'Default' | 'Hover' | 'Disabled' };
+
+export function PaginationPrevious({ className, state = 'Default' }: PaginationDirectionProps) {
+  const disabled = state === 'Disabled';
+  return <button className={`sds-pagination__previous sds-pagination__previous--${state.toLowerCase()} ${className ?? ''}`} disabled={disabled} type="button">← <span>Previous</span></button>;
 }
 
-export function PaginationNext() {
-  return <button className="sds-pagination__next" type="button"><span>Next</span> →</button>;
+export function PaginationNext({ className, state = 'Default' }: PaginationDirectionProps) {
+  const disabled = state === 'Disabled';
+  return <button className={`sds-pagination__next sds-pagination__next--${state.toLowerCase()} ${className ?? ''}`} disabled={disabled} type="button"><span>Next</span> →</button>;
 }
 
 export function PaginationList({ children }: { children?: ReactNode }) {
